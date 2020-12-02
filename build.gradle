@@ -1,0 +1,35 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.0'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'com.thenews'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
+	compile group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.5.0'
+// https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-data-rest
+	compile group: 'org.springdoc', name: 'springdoc-openapi-data-rest', version: '1.5.0'
+// https://mvnrepository.com/artifact/org.modelmapper/modelmapper
+	compile group: 'org.modelmapper', name: 'modelmapper', version: '2.3.9'
+// https://mvnrepository.com/artifact/org.modelmapper.extensions/modelmapper-spring
+	compile group: 'org.modelmapper.extensions', name: 'modelmapper-spring', version: '2.3.9'
+
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'mysql:mysql-connector-java'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
